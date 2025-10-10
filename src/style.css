@@ -1,0 +1,246 @@
+/* --- ESTILOS DA ANIMAÇÃO DE VIRAR O CARD --- */
+
+/* Contêiner principal que define a perspectiva 3D */
+.flip-card {
+  background-color: transparent;
+  width: 100%;
+  height: 200px;
+  min-height: 150px;
+  perspective: 1000px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Contêiner que segura a frente e o verso. É ele que vira. */
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.7s;
+  transform-style: preserve-3d;
+  cursor: pointer;
+}
+
+/* Classe adicionada via JS para ativar a animação de virar */
+.flip-card-inner.is-flipped {
+  transform: rotateY(180deg);
+}
+
+/* Estilo da frente e do verso */
+.flip-card-front,
+.flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+/* Estilo da frente (imagem) */
+.flip-card-front {
+  background-color: transparent;
+}
+
+.flip-card-front .slide-img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+  margin: 0;
+  padding: 0;
+  border-radius: 12px;
+  background: transparent;
+}
+
+/* Estilo do verso (textos) */
+.flip-card-back {
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  color: white;
+  transform: rotateY(180deg);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 15px;
+  box-sizing: border-box;
+}
+
+.flip-card-back h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 22px;
+  margin: 0 0 10px 0;
+}
+
+.flip-card-back p {
+  font-size: 14px;
+  margin: 0;
+  line-height: 1.4;
+}
+
+/* --- AJUSTE FINAL POPUP CARROSSEL --- */
+.popup-slider .swiper {
+  width: 300px;
+  height: 220px;
+  position: relative;
+  overflow: hidden;
+  border-radius: 12px;
+}
+
+.popup-slider .swiper .swiper-slide {
+  opacity: 1;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.popup-slider .swiper-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  width: 100%;
+  height: 100%;
+  transform: translateX(0);
+}
+
+.popup-slider .swiper-slide {
+  position: relative;
+  width: 100% !important;
+  height: 200px !important;
+  min-height: 150px !important;
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  overflow: hidden;
+  flex-shrink: 0;
+  flex-grow: 0;
+}
+.popup-slider .slide-caption {
+  margin: 10px 0 0 0;
+  font-size: 13px;
+  color: var(--muted);
+  text-align: center;
+  word-break: break-word;
+}
+.popup-slider .swiper-button-prev,
+.popup-slider .swiper-button-next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 32px;
+  height: 32px;
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(4px);
+  border-radius: 50%;
+  color: white;
+  transition: all 0.2s;
+  z-index: 10;
+}
+
+.popup-slider .swiper-button-prev:after,
+.popup-slider .swiper-button-next:after {
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.popup-slider .swiper-button-prev {
+  left: 5px;
+}
+
+.popup-slider .swiper-button-next {
+  right: 5px;
+}
+
+.popup-slider .swiper-button-prev:hover,
+.popup-slider .swiper-button-next:hover {
+  background: rgba(0, 0, 0, 0.8);
+  transform: translateY(-50%) scale(1.1);
+}
+/* --- FIM AJUSTE FINAL --- */
+
+/* Popup geral e mapa */
+#map {
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 1;
+}
+
+.popup-inner,
+.popup-inner .popup-card,
+.flip-card,
+.flip-card-inner,
+.flip-card-front,
+.flip-card-back {
+  max-width: 350px;
+  max-height: 260px;
+  border-radius: 12px !important;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background: transparent;
+}
+
+.slide-img {
+  display: block;
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain !important;
+  border-radius: 12px !important;
+  margin: 0 auto;
+  background: transparent;
+}
+
+.leaflet-popup-content-wrapper {
+  background: transparent !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  box-shadow: none !important;
+  border: none !important;
+  border-radius: 0 !important;
+}
+
+.leaflet-popup-content {
+  background: transparent !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  border: none !important;
+  border-radius: 0 !important;
+}
+
+.leaflet-popup-tip-container {
+  display: none !important;
+}
+
+.leaflet-popup {
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  border-radius: 0 !important;
+}
+
+.leaflet-popup-pane {
+  background: transparent !important;
+}
+
+.popup-inner {
+  margin: 0 auto;
+  background: transparent;
+  display: block;
+}
+
+.popup-inner .popup-card {
+  background: transparent;
+  box-shadow: none;
+  border: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
