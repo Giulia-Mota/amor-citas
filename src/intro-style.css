@@ -1,0 +1,58 @@
+body {
+  margin: 0;
+  font-family: 'Playfair Display', serif; /* Uma fonte mais romântica */
+  background-image: url('caminho/para/sua/imagem_de_lirios.jpg');
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  color: #333;
+}
+
+.container {
+  background-color: rgba(255, 255, 255, 0.85); /* Fundo branco semi-transparente */
+  padding: 40px;
+  border-radius: 15px;
+  max-width: 600px;
+  text-align: center;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+}
+
+/* Animações de Fade-in */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.fade-in-1 { animation: fadeIn 1s ease-out forwards; }
+.fade-in-2 { opacity: 0; animation: fadeIn 1s ease-out 1s forwards; }
+.fade-in-3 { opacity: 0; animation: fadeIn 1s ease-out 2s forwards; }
+.fade-in-4 { opacity: 0; animation: fadeIn 1s ease-out 3s forwards; }
+
+h1 {
+  font-size: 2.5rem;
+}
+
+p {
+  font-size: 1.2rem;
+  line-height: 1.6;
+}
+
+.botao-magico {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 15px 30px;
+  background-color: #ffb6c1; /* Rosa claro, combinando com o mapa */
+  color: white;
+  text-decoration: none;
+  border-radius: 50px;
+  font-weight: bold;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.botao-magico:hover {
+  transform: scale(1.05);
+  box-shadow: 0 5px 15px rgba(255, 105, 180, 0.5);
+}

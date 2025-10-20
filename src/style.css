@@ -44,8 +44,8 @@ body {
 
 /* ======== POPUP CARD ======== */
 .popup-card {
-  width: 260px;
-  height: 320px;
+  width: 220px;
+  height: 280px;
   perspective: 1000px;
   position: center;
   margin: 0 auto;
@@ -81,7 +81,7 @@ body {
 }
 
 .card-back {
-  background-color: #ffffffff;
+  background-color: #f1eee2dc;
   color: #333;
   transform: rotateY(180deg);
   display: flex;
@@ -90,7 +90,7 @@ body {
   text-align: center;
   padding: 10px;
   font-size: 0.9rem;
-  border: 2px solid #ffc0cb;
+  border: 2px solid #ccc8baff;
   box-sizing: border-box; /* <<< ADICIONE ESTA LINHA */
 }
 
